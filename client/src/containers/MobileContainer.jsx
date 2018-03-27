@@ -3,17 +3,11 @@ import PropTypes from "prop-types";
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
   Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
-  Sidebar,
-  Visibility
+  Sidebar
 } from "semantic-ui-react";
 import LandingPageHeading from "../components/LandingPage/LandingPageHeading";
 
