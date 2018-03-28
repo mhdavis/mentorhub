@@ -34,14 +34,14 @@ class MobileContainer extends Component {
 
     return (
       <Responsive {...Responsive.onlyMobile}>
-        <Sidebar.Pushable>
+        <Sidebar.Pushable as={Segment}>
           <Sidebar
             as={Menu}
             animation="push"
             direction="left"
+            visible={sidebarOpened}
             inverted
             vertical
-            visible={sidebarOpened}
           >
             <Menu.Item as="a" active>
               Home
@@ -58,12 +58,13 @@ class MobileContainer extends Component {
           >
             <Segment
               inverted
+              color="teal"
               textAlign="center"
               style={{ minHeight: 350, padding: "1em 0em" }}
               vertical
             >
               <Container>
-                <Menu inverted pointing secondary size="large">
+                <Menu inverted secondary size="large">
                   <Menu.Item onClick={this.handleToggle}>
                     <Icon name="sidebar" />
                   </Menu.Item>

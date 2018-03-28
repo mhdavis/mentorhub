@@ -2,8 +2,9 @@ import React from "react";
 import { Button, Grid, Header, Image, Segment } from "semantic-ui-react";
 import ResponsiveContainer from "../ResponsiveContainer";
 
-const HomepageLayout = () => (
+const LandingPageLayout = () => (
   <ResponsiveContainer>
+    {/* This should be location of feed */}
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
@@ -43,4 +44,4 @@ const HomepageLayout = () => (
   </ResponsiveContainer>
 );
 
-export default HomepageLayout;
+export default LandingPageLayout;
