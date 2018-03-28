@@ -7,6 +7,7 @@ const LandingPageLayout = () => (
     {/* This should be location of feed */}
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
+        {/* Mentee Information */}
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as="h3" style={{ fontSize: "2em" }}>
@@ -34,11 +35,15 @@ const LandingPageLayout = () => (
             />
           </Grid.Column>
         </Grid.Row>
+
+        {/* Mentor Information */}
         <Grid.Row>
           <Grid.Column textAlign="center">
             <Button size="huge">Check Them Out</Button>
           </Grid.Column>
         </Grid.Row>
+
+        {/* Community Information */}
       </Grid>
     </Segment>
   </ResponsiveContainer>

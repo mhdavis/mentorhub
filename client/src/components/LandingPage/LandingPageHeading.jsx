@@ -6,15 +6,24 @@ const LandingPageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as="h1"
-      content="Welcome to Mentorhub"
       inverted
+      className="mh-title"
       style={{
         fontSize: mobile ? "2em" : "4em",
         fontWeight: "normal",
         marginBottom: 0,
         marginTop: mobile ? "1.5em" : "3em"
       }}
-    />
+    >
+      Welcome to
+      <div
+        style={{
+          fontFamily: "Shrikhand, cursive"
+        }}
+      >
+        Mentorhub
+      </div>
+    </Header>
     <Header
       as="h2"
       content="Build a community by helping others"
@@ -25,7 +34,7 @@ const LandingPageHeading = ({ mobile }) => (
         marginTop: mobile ? "0.5em" : "1.5em"
       }}
     />
-    <Button inverted size="huge">
+    <Button inverted size="large">
       Learn More
     </Button>
   </Container>

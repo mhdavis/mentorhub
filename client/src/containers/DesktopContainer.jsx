@@ -57,7 +57,7 @@ class DesktopContainer extends Component {
                   <Button
                     as="a"
                     inverted={!fixed}
-                    color={fixed ? "teal" : "white"}
+                    color={fixed ? "teal" : null}
                     style={{ marginLeft: "0.5em" }}
                   >
                     Sign Up
