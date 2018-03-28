@@ -25,7 +25,7 @@ const LandingPageHeading = ({ mobile }) => (
         marginTop: mobile ? "0.5em" : "1.5em"
       }}
     />
-    <Button primary size="huge">
+    <Button inverted size="huge">
       Learn More
     </Button>
   </Container>

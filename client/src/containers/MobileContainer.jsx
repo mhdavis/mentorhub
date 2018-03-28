@@ -37,7 +37,8 @@ class MobileContainer extends Component {
         <Sidebar.Pushable>
           <Sidebar
             as={Menu}
-            animation="uncover"
+            animation="push"
+            direction="left"
             inverted
             vertical
             visible={sidebarOpened}
