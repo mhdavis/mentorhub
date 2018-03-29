@@ -1,9 +1,11 @@
 import React from "react";
 import { Grid, Header, Image, Segment } from "semantic-ui-react";
-import ResponsiveContainer from "../ResponsiveContainer";
+import GeneralContainer from "../../containers/GeneralContainer";
+import Navbar from "../Navbar/Navbar";
 
 const AboutPageLayout = () => (
-  <ResponsiveContainer>
+  <GeneralContainer>
+    <Navbar activeItem="About" />
     {/* This should be location of feed */}
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
@@ -74,7 +76,7 @@ const AboutPageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-  </ResponsiveContainer>
+  </GeneralContainer>
 );
 
 export default AboutPageLayout;
