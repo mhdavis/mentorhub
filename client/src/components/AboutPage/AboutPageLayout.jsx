@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Header, Image, Segment } from "semantic-ui-react";
 import GeneralContainer from "../../containers/GeneralContainer";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 const AboutPageLayout = () => (
   <GeneralContainer>
@@ -76,6 +77,8 @@ const AboutPageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
+
+    <Footer />
   </GeneralContainer>
 );
 
