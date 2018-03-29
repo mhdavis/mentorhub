@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import "semantic-ui-css/semantic.min.css";
 import LandingPageLayout from "./components/LandingPage/LandingPageLayout";
@@ -6,9 +7,13 @@ import LandingPageLayout from "./components/LandingPage/LandingPageLayout";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <LandingPageLayout />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={LandingPageLayout} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
