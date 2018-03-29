@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import {
   Button,
   Container,
@@ -46,10 +47,12 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Menu.Item as="a" active>
+                <Menu.Item as={Link} to="/" active>
                   Home
                 </Menu.Item>
-                <Menu.Item as="a">About</Menu.Item>
+                <Menu.Item as={Link} to="/about">
+                  About
+                </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
                     Log in
