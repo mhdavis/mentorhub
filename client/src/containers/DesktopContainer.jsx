@@ -6,8 +6,7 @@ import {
   Menu,
   Responsive,
   Segment,
-  Visibility,
-  Image
+  Visibility
 } from "semantic-ui-react";
 import LandingPageHeading from "../components/LandingPage/LandingPageHeading";
 

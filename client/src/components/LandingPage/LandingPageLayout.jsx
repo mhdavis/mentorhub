@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  Button,
-  Grid,
-  Header,
-  Image,
-  Segment,
-  Divider
-} from "semantic-ui-react";
+import { Grid, Header, Image, Segment } from "semantic-ui-react";
 import ResponsiveContainer from "../ResponsiveContainer";
+import LandingPageFooter from "./LandingPageFooter";
 
 const LandingPageLayout = () => (
   <ResponsiveContainer>
@@ -35,9 +29,12 @@ const LandingPageLayout = () => (
             />
           </Grid.Column>
         </Grid.Row>
-        <Divider />
+      </Grid>
+    </Segment>
 
-        {/* Mentor Information */}
+    {/* Mentor Information */}
+    <Segment style={{ padding: "8em 0em" }} vertical>
+      <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column floated="left" width={6}>
             <Image
@@ -53,20 +50,24 @@ const LandingPageLayout = () => (
             </Header>
             <p style={{ fontSize: "1.6em" }}>
               Find Mentees or Groups of Mentees to help guide in their personal
-              and professional journey! Grow your teaching skills and network!
+              and professional journey. Grow your teaching skills and network
+              along the way!
             </p>
           </Grid.Column>
         </Grid.Row>
-        <Divider />
+      </Grid>
+    </Segment>
 
-        {/* Community Information */}
+    {/* Community Information */}
+    <Segment style={{ padding: "8em 0em" }} vertical>
+      <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column
             width={16}
             textAlign="center"
-            style={{ padding: "0rem 10rem" }}
+            style={{ padding: "1.6rem 10rem" }}
           >
-            <Header as="h3" style={{ paddingTop: "1.6em", fontSize: "2.2em" }}>
+            <Header as="h3" style={{ fontSize: "2.2em" }}>
               All for free!
             </Header>
             <p style={{ fontSize: "1.6em" }}>
@@ -78,6 +79,8 @@ const LandingPageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
+
+    <LandingPageFooter />
   </ResponsiveContainer>
 );
 
