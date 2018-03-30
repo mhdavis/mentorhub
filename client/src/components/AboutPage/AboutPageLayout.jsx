@@ -1,12 +1,12 @@
 import React from "react";
 import { Grid, Header, Image, Segment } from "semantic-ui-react";
-import GeneralContainer from "../../containers/GeneralContainer";
+import NavbarResponsive from "../Navbar/NavbarResponsive";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 const AboutPageLayout = () => (
-  <GeneralContainer>
-    <Navbar activeItem="About" />
+  <div>
+    <NavbarResponsive activeItem="About" />
     <Segment style={{ padding: "3em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         {/* The Beginning */}
@@ -128,7 +128,7 @@ const AboutPageLayout = () => (
     </Segment>
 
     <Footer />
-  </GeneralContainer>
+  </div>
 );
 
 export default AboutPageLayout;

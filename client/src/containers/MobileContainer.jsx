@@ -83,7 +83,6 @@ class MobileContainer extends Component {
               </Container>
               <LandingPageHeading mobile />
             </Segment>
-
             {children}
           </Sidebar.Pusher>
         </Sidebar.Pushable>
