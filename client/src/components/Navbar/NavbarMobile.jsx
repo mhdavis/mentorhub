@@ -33,19 +33,14 @@ const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
 
     <Sidebar.Pusher dimmed={visible} onClick={onPusherClick}>
       {/* Normal Menu */}
-      <Segment
-        inverted
-        color="purple"
-        textAlign="center"
-        style={{ minHeight: 70, padding: "1em 0em" }}
-        vertical
-      >
+      <Segment>
         <Menu
           fixed="top"
+          style={{ padding: "1em 0em" }}
+          color="teal"
           inverted
           secondary
           size="large"
-          style={{ padding: "1em 0em" }}
         >
           <Container>
             <Menu.Item onClick={onToggle}>
