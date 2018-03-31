@@ -69,9 +69,9 @@ const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
 );
 
 NavbarMobile.propTypes = {
-  children: PropTypes.node,
-  onPusherClick: PropTypes.func,
-  onToggle: PropTypes.func
+  children: PropTypes.node.isRequired,
+  onPusherClick: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired
 };
 
 export default NavbarMobile;

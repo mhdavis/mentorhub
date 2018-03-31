@@ -28,8 +28,9 @@ class NavbarResponsive extends Component {
             onPusherClick={this.handlePusher}
             onToggle={this.handleToggle}
             visible={visible}
-          />
-          {children}
+          >
+            {children}
+          </NavbarMobile>
         </Responsive>
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
           <Navbar activeItem={activeItem} />
@@ -41,8 +42,8 @@ class NavbarResponsive extends Component {
 }
 
 NavbarResponsive.propTypes = {
-  activeItem: PropTypes.string,
-  children: PropTypes.node
+  activeItem: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default NavbarResponsive;
