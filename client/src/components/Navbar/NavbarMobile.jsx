@@ -7,8 +7,7 @@ import {
   Sidebar,
   Button,
   Segment,
-  Container,
-  Responsive
+  Container
 } from "semantic-ui-react";
 
 const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
