@@ -54,7 +54,7 @@ class DesktopContainer extends Component {
                   About
                 </Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted={!fixed}>
+                  <Button as={Link} to="/login" inverted={!fixed}>
                     Log in
                   </Button>
                   <Button

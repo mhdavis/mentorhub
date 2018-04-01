@@ -27,7 +27,9 @@ const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
       <Menu.Item as={Link} to="/about">
         About
       </Menu.Item>
-      <Menu.Item as="a">Log in</Menu.Item>
+      <Menu.Item as={Link} to="/login">
+        Log in
+      </Menu.Item>
       <Menu.Item as="a">Sign Up</Menu.Item>
     </Sidebar>
 

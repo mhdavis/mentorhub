@@ -42,8 +42,8 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-  activeItem: PropTypes.string.isRequired,
-  children: PropTypes.node
+  activeItem: PropTypes.string,
+  children: PropTypes.node.isRequired
 };
 
 export default Navbar;
