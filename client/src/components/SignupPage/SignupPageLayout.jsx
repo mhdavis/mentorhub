@@ -9,6 +9,7 @@ import {
 } from "semantic-ui-react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import BasicInformationForm from "./BasicInformationForm";
 
 const SignupPageLayout = () => (
   <div>
@@ -20,36 +21,7 @@ const SignupPageLayout = () => (
           verticalAlign="middle"
         >
           <Grid.Column style={{ maxWidth: 450 }}>
-            <Form size="large">
-              <Header as="h2" textAlign="center" style={{ marginTop: "1rem" }}>
-                Signup
-              </Header>
-              <Segment>
-                <Form.Input
-                  fluid
-                  icon="user"
-                  iconPosition="left"
-                  placeholder="E-mail address"
-                />
-                <Form.Input
-                  fluid
-                  icon="lock"
-                  iconPosition="left"
-                  placeholder="Password"
-                  type="password"
-                />
-                <Form.Input
-                  fluid
-                  icon="lock"
-                  iconPosition="left"
-                  placeholder="Confirm Password"
-                  type="password"
-                />
-                <Button fluid size="large">
-                  Sign Up
-                </Button>
-              </Segment>
-            </Form>
+            <BasicInformationForm />
             <Message style={{ margin: "1rem 0em" }}>
               Already have an account? Log In
             </Message>
