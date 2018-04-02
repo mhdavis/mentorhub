@@ -30,7 +30,9 @@ const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
       <Menu.Item as={Link} to="/login">
         Log in
       </Menu.Item>
-      <Menu.Item as="a">Sign Up</Menu.Item>
+      <Menu.Item as={Link} to="/signup">
+        Sign Up
+      </Menu.Item>
     </Sidebar>
 
     <Sidebar.Pusher dimmed={visible} onClick={onPusherClick}>
@@ -49,10 +51,15 @@ const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
               <Icon name="sidebar" />
             </Menu.Item>
             <Menu.Item position="right">
-              <Button as="a" inverted>
+              <Button as={Link} to="/login" inverted>
                 Log in
               </Button>
-              <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
+              <Button
+                as={Link}
+                to="/signup"
+                inverted
+                style={{ marginLeft: "0.5em" }}
+              >
                 Sign Up
               </Button>
             </Menu.Item>

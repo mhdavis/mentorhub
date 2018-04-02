@@ -23,7 +23,12 @@ const NavbarDesktop = ({ activeItem }) => (
           <Button as={Link} to="/login" inverted>
             Log in
           </Button>
-          <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
+          <Button
+            as={Link}
+            to="/signup"
+            inverted
+            style={{ marginLeft: "0.5em" }}
+          >
             Sign Up
           </Button>
         </Menu.Item>
