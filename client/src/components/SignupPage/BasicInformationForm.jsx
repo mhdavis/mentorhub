@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  Message,
-  Form,
-  Header,
-  Segment,
-  Button
-} from "semantic-ui-react";
+import { Form, Header, Segment, Button, Icon } from "semantic-ui-react";
 
 const BasicInformationForm = () => (
   <Form size="large">
@@ -34,9 +27,8 @@ const BasicInformationForm = () => (
         placeholder="Confirm Password"
         type="password"
       />
-      <Form.Input fluid icon="" iconPosition="left" placeholder="Skill" />
-      <Button fluid size="large">
-        Sign Up
+      <Button fluid color="teal" size="large">
+        Next<Icon name="arrow right" />
       </Button>
     </Segment>
   </Form>

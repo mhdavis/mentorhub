@@ -1,17 +1,13 @@
 import React from "react";
-import {
-  Grid,
-  Message,
-  Form,
-  Header,
-  Segment,
-  Button
-} from "semantic-ui-react";
+import { Grid, Message, Segment } from "semantic-ui-react";
+import { Route, Switch } from "react-router-dom";
+import ReactRouterPropTypes from "react-router-prop-types";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import BasicInformationForm from "./BasicInformationForm";
+import SkillsForm from "./SkillsForm";
 
-const SignupPageLayout = () => (
+const SignupPageLayout = ({ match }) => (
   <div>
     <Navbar>
       <Segment style={{ padding: "5em 0em" }} vertical>
@@ -21,7 +17,20 @@ const SignupPageLayout = () => (
           verticalAlign="middle"
         >
           <Grid.Column style={{ maxWidth: 450 }}>
-            <BasicInformationForm />
+            <div>
+              <Switch>
+                <Route
+                  path={`${match.path}`}
+                  exact
+                  component={BasicInformationForm}
+                />
+                <Route
+                  path={`${match.path}/basic_information`}
+                  component={BasicInformationForm}
+                />
+                <Route path={`${match.path}/skills`} component={SkillsForm} />
+              </Switch>
+            </div>
             <Message style={{ margin: "1rem 0em" }}>
               Already have an account? Log In
             </Message>
@@ -32,5 +41,10 @@ const SignupPageLayout = () => (
     </Navbar>
   </div>
 );
+
+SignupPageLayout.propTypes = {
+  // eslint-disable-next-line react/no-typos
+  match: ReactRouterPropTypes.match.isRequired
+};
 
 export default SignupPageLayout;

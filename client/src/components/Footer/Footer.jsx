@@ -8,7 +8,7 @@ import {
   Header
 } from "semantic-ui-react";
 
-const LandingPageFooter = () => (
+const Footer = () => (
   <Segment inverted color="teal" vertical style={{ padding: "8em 0em" }}>
     <Container>
       <Grid divided inverted stackable>
@@ -45,4 +45,4 @@ const LandingPageFooter = () => (
   </Segment>
 );
 
-export default LandingPageFooter;
+export default Footer;
