@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Message, Segment } from "semantic-ui-react";
+import { Grid, Message, Segment, Header } from "semantic-ui-react";
 import { Route, Switch } from "react-router-dom";
 import ReactRouterPropTypes from "react-router-prop-types";
 import Navbar from "../Navbar/Navbar";
@@ -18,6 +18,13 @@ const SignupPageLayout = ({ match }) => (
         >
           <Grid.Column style={{ maxWidth: 450 }}>
             <div>
+              <Header
+                as="h1"
+                textAlign="center"
+                style={{ marginTop: "1rem", fontFamily: "Shrikhand, cursive" }}
+              >
+                Signup
+              </Header>
               <Switch>
                 <Route
                   path={`${match.path}`}

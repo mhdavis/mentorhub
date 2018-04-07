@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Header, Segment, Button } from "semantic-ui-react";
+import { Form, Segment, Button } from "semantic-ui-react";
 
 class SkillsForm extends Component {
   state = {
@@ -13,9 +13,6 @@ class SkillsForm extends Component {
   render() {
     return (
       <Form size="large">
-        <Header as="h2" textAlign="center" style={{ marginTop: "1rem" }}>
-          Signup
-        </Header>
         <Segment>
           <Form.Input iconPosition="left" placeholder="Skill" />
           <Button size="large">Add</Button>
