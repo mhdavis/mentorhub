@@ -38,7 +38,7 @@ const SignupPageLayout = ({ match }) => (
                 <Route path={`${match.path}/skills`} component={SkillsForm} />
               </Switch>
             </div>
-            <Message style={{ margin: "1rem 0em" }}>
+            <Message warning style={{ margin: "1rem 0em" }}>
               Already have an account? Log In
             </Message>
           </Grid.Column>

@@ -1,9 +1,13 @@
 import React from "react";
-import { Form, Segment, Button, Icon } from "semantic-ui-react";
+import { Form, Segment, Button, Icon, Message } from "semantic-ui-react";
 
 const BasicInformationForm = () => (
   <Form size="large">
     <Segment vertical textAlign="left">
+      <Message
+        header="Basic Information"
+        content="Some basic information for account creation!"
+      />
       <Form.Field>
         <label>E-mail Address</label>
         <Form.Input icon="mail" iconPosition="left" type="email" />
