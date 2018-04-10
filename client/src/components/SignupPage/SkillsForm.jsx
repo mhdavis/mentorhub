@@ -56,6 +56,9 @@ class SkillsForm extends Component {
             );
           })}
         </Segment>
+        <Button fluid color="teal" size="large">
+          Next<Icon name="arrow right" onClick={this.removeSkill} />
+        </Button>
       </Segment>
     );
   }
