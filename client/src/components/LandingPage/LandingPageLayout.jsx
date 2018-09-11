@@ -2,12 +2,40 @@ import React from 'react';
 import {
   Grid, Header, Image, Segment,
 } from 'semantic-ui-react';
-import ResponsiveContainer from '../ResponsiveContainer';
+import Navbar from '../Navbar/Navbar';
 import LandingPageFooter from './LandingPageFooter';
+import Jumbotron from '../Jumbotron/Jumbotron';
+
+const NavbarLinks = [
+  {
+    title: 'Home',
+    address: '/',
+    active: true,
+    parent: false,
+  },
+  {
+    title: 'About',
+    address: '/about',
+    active: false,
+    parent: false,
+  },
+  {
+    title: 'Login',
+    address: '/login',
+    active: false,
+    parent: false,
+  },
+];
 
 const LandingPageLayout = () => (
-  <ResponsiveContainer>
+  <div>
+    <Navbar links={NavbarLinks} />
     {/* This should be location of feed */}
+    <Jumbotron
+      heading="Mentorhub"
+      subheading="Be a Mentor. Find a Mentor. Build Together."
+      buttonLink="/"
+    />
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign="middle">
         {/* Mentee Information */}
@@ -64,9 +92,8 @@ const LandingPageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-
     <LandingPageFooter />
-  </ResponsiveContainer>
+  </div>
 );
 
 export default LandingPageLayout;
