@@ -1,26 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
-  Icon,
-  Menu,
-  Sidebar,
-  Button,
-  Segment,
-  Container
-} from "semantic-ui-react";
+  Icon, Menu, Sidebar, Button, Segment, Container,
+} from 'semantic-ui-react';
 
-const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
+const NavbarMobile = ({
+  children, onPusherClick, onToggle, visible,
+}) => (
   <Sidebar.Pushable as={Segment}>
     {/* Sidebar */}
-    <Sidebar
-      as={Menu}
-      animation="push"
-      direction="left"
-      visible={visible}
-      inverted
-      vertical
-    >
+    <Sidebar as={Menu} animation="push" direction="left" visible={visible} inverted vertical>
       <Menu.Item as={Link} to="/" active>
         Home
       </Menu.Item>
@@ -38,7 +28,7 @@ const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
       <Segment>
         <Menu
           fixed="top"
-          style={{ padding: "1em 0em" }}
+          style={{ padding: '1em 0em' }}
           color="teal"
           inverted
           secondary
@@ -52,7 +42,7 @@ const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
               <Button as="a" inverted>
                 Log in
               </Button>
-              <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
+              <Button as="a" inverted style={{ marginLeft: '0.5em' }}>
                 Sign Up
               </Button>
             </Menu.Item>
@@ -67,7 +57,8 @@ const NavbarMobile = ({ children, onPusherClick, onToggle, visible }) => (
 NavbarMobile.propTypes = {
   children: PropTypes.node.isRequired,
   onPusherClick: PropTypes.func.isRequired,
-  onToggle: PropTypes.func.isRequired
+  onToggle: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
 };
 
 export default NavbarMobile;

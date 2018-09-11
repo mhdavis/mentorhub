@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import MobileContainer from "../containers/MobileContainer";
-import DesktopContainer from "../containers/DesktopContainer";
+import React from 'react';
+import PropTypes from 'prop-types';
+import MobileContainer from '../containers/MobileContainer';
+import DesktopContainer from '../containers/DesktopContainer';
 
 const ResponsiveContainer = ({ children }) => (
   <div>
@@ -11,7 +11,7 @@ const ResponsiveContainer = ({ children }) => (
 );
 
 ResponsiveContainer.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node.isRequired,
 };
 
 export default ResponsiveContainer;

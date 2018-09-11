@@ -1,21 +1,25 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Responsive } from "semantic-ui-react";
-import NavbarDesktop from "./NavbarDesktop";
-import NavbarMobile from "./NavbarMobile";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Responsive } from 'semantic-ui-react';
+import NavbarDesktop from './NavbarDesktop';
+import NavbarMobile from './NavbarMobile';
 
 class Navbar extends Component {
-  state = {
-    visible: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false,
+    };
+  }
 
-  handlePusher = () => {
+  handlePusher() {
     const { visible } = this.state;
+    if (visible) this.setState(() => ({ visible: false }));
+  }
 
-    if (visible) this.setState({ visible: false });
-  };
-
-  handleToggle = () => this.setState({ visible: !this.state.visible });
+  handleToggle() {
+    this.setState(prevState => ({ visible: !prevState.visible }));
+  }
 
   render() {
     const { children, activeItem } = this.props;
@@ -42,8 +46,8 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-  activeItem: PropTypes.string,
-  children: PropTypes.node.isRequired
+  activeItem: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Navbar;

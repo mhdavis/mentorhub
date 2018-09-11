@@ -1,26 +1,32 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
-  Button,
-  Container,
-  Menu,
-  Responsive,
-  Segment,
-  Visibility
-} from "semantic-ui-react";
-import LandingPageHeading from "../components/LandingPage/LandingPageHeading";
+  Button, Container, Menu, Responsive, Segment, Visibility,
+} from 'semantic-ui-react';
+import LandingPageHeading from '../components/LandingPage/LandingPageHeading';
 
 /* Heads up!
- * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
+ * Neither Semantic UI nor Semantic UI React offer a responsive navbar,
+ *  however, it can be implemented easily.
  * It can be more complicated, but you can create really flexible markup.
  */
 
 class DesktopContainer extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      fixed: false,
+    };
+  }
 
-  hideFixedMenu = () => this.setState({ fixed: false });
-  showFixedMenu = () => this.setState({ fixed: true });
+  hideFixedMenu() {
+    this.setState({ fixed: false });
+  }
+
+  showFixedMenu() {
+    this.setState({ fixed: true });
+  }
 
   render() {
     const { children } = this.props;
@@ -37,15 +43,10 @@ class DesktopContainer extends Component {
             inverted
             color="teal"
             textAlign="center"
-            style={{ minHeight: 700, padding: "1em 0em" }}
+            style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
           >
-            <Menu
-              fixed={fixed ? "top" : null}
-              inverted={!fixed}
-              secondary={!fixed}
-              size="large"
-            >
+            <Menu fixed={fixed ? 'top' : null} inverted={!fixed} secondary={!fixed} size="large">
               <Container>
                 <Menu.Item as={Link} to="/" active>
                   Home
@@ -60,8 +61,8 @@ class DesktopContainer extends Component {
                   <Button
                     as="a"
                     inverted={!fixed}
-                    color={fixed ? "teal" : null}
-                    style={{ marginLeft: "0.5em" }}
+                    color={fixed ? 'teal' : null}
+                    style={{ marginLeft: '0.5em' }}
                   >
                     Sign Up
                   </Button>
@@ -79,7 +80,7 @@ class DesktopContainer extends Component {
 }
 
 DesktopContainer.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node.isRequired,
 };
 
 export default DesktopContainer;

@@ -1,33 +1,33 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
-  Button,
-  Container,
-  Icon,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar
-} from "semantic-ui-react";
-import LandingPageHeading from "../components/LandingPage/LandingPageHeading";
+  Button, Container, Icon, Menu, Responsive, Segment, Sidebar,
+} from 'semantic-ui-react';
+import LandingPageHeading from '../components/LandingPage/LandingPageHeading';
 
 /* Heads up!
- * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
+ * Neither Semantic UI nor Semantic UI React offer a responsive navbar,
+ *  however, it can be implemented easily.
  * It can be more complicated, but you can create really flexible markup.
  */
 
 class MobileContainer extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebarOpened: false,
+    };
+  }
 
-  handlePusherClick = () => {
+  handlePusherClick() {
     const { sidebarOpened } = this.state;
-
     if (sidebarOpened) this.setState({ sidebarOpened: false });
-  };
+  }
 
-  handleToggle = () =>
-    this.setState({ sidebarOpened: !this.state.sidebarOpened });
+  handleToggle() {
+    this.setState(prevState => ({ sidebarOpened: !prevState.sidebarOpened }));
+  }
 
   render() {
     const { children } = this.props;
@@ -59,13 +59,13 @@ class MobileContainer extends Component {
           <Sidebar.Pusher
             dimmed={sidebarOpened}
             onClick={this.handlePusherClick}
-            style={{ minHeight: "100vh" }}
+            style={{ minHeight: '100vh' }}
           >
             <Segment
               inverted
               color="teal"
               textAlign="center"
-              style={{ minHeight: 350, padding: "1em 0em" }}
+              style={{ minHeight: 350, padding: '1em 0em' }}
               vertical
             >
               <Container>
@@ -77,7 +77,7 @@ class MobileContainer extends Component {
                     <Button as={Link} to="/login" inverted>
                       Log in
                     </Button>
-                    <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
+                    <Button as="a" inverted style={{ marginLeft: '0.5em' }}>
                       Sign Up
                     </Button>
                   </Menu.Item>
@@ -94,7 +94,7 @@ class MobileContainer extends Component {
 }
 
 MobileContainer.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default MobileContainer;
