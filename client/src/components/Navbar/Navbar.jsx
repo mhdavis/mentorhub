@@ -1,53 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Responsive } from 'semantic-ui-react';
-import NavbarDesktop from './NavbarDesktop';
-import NavbarMobile from './NavbarMobile';
 
-class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-    };
-  }
-
-  handlePusher() {
-    const { visible } = this.state;
-    if (visible) this.setState(() => ({ visible: false }));
-  }
-
-  handleToggle() {
-    this.setState(prevState => ({ visible: !prevState.visible }));
-  }
-
-  render() {
-    const { children, activeItem } = this.props;
-    const { visible } = this.state;
-
-    return (
-      <div>
-        <Responsive {...Responsive.onlyMobile}>
-          <NavbarMobile
-            onPusherClick={this.handlePusher}
-            onToggle={this.handleToggle}
-            visible={visible}
-          >
-            {children}
-          </NavbarMobile>
-        </Responsive>
-        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-          <NavbarDesktop activeItem={activeItem} />
-          {children}
-        </Responsive>
-      </div>
-    );
-  }
+/*
+link structure:
+{
+  address: string,
+  active: bool,
+  parent: bool,
 }
+*/
+
+const determineClasses = (link) => {
+  const className = [];
+  if (link.active) {
+    className.push('uk-active');
+  }
+  if (link.parent) {
+    className.push('uk-parent');
+  }
+  if (className.length > 0) {
+    return className.join(' ');
+  }
+  return '';
+};
+
+const Navbar = ({ links, transparent }) => (
+  <nav
+    className={transparent ? 'uk-navbar-container' : 'uk-navbar-container uk-navbar-transparent'}
+    uk-navbar
+  >
+    <div className="uk-navbar-left">
+      <ul className="uk-navbar-nav">
+        {links.map(link => (
+          <li className={determineClasses(link)}>
+            <a href={link.address}>{link.title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+);
 
 Navbar.propTypes = {
-  activeItem: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  links: PropTypes.arrayOf(PropTypes.object).isRequired,
+  transparent: PropTypes.bool,
+};
+
+Navbar.defaultProps = {
+  transparent: false,
 };
 
 export default Navbar;
