@@ -1,15 +1,10 @@
-import React from "react";
+import React from 'react';
 import {
-  Grid,
-  Container,
-  Segment,
-  Icon,
-  List,
-  Header
-} from "semantic-ui-react";
+  Grid, Container, Segment, Icon, List, Header,
+} from 'semantic-ui-react';
 
 const LandingPageFooter = () => (
-  <Segment inverted color="teal" vertical style={{ padding: "8em 0em" }}>
+  <Segment inverted color="teal" vertical style={{ padding: '8em 0em' }}>
     <Container>
       <Grid divided inverted stackable>
         <Grid.Row>
